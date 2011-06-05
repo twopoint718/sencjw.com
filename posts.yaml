@@ -1,0 +1,220 @@
+- date: 2011-05-27
+  title: First Post
+  postbody: >
+    First post.  That's what's the best about reformatting a blog.  It
+    always seems to generate at least one extra post.  It's weird how
+    blogging software does that.
+
+- date: 2011-05-01
+  title: Hackerspace Show on Wisconsin Public Radio
+  postbody: >
+    [Larry Meiller did a show
+    about](http://www.wpr.org/webcasting/audioarchives_display.cfm?Code=mlr&StartRow=1&keyword=makerspace&highlight=on&x=0&y=0)
+    (maker|hacker)spaces in Wisconsin. Sector67 is mentioned.
+
+- date: 2011-03-02
+  title: "Don't zip, bundle(1)"
+  postbody: >
+    I've been playing around with Plan 9 from Bell Labs a bunch
+    lately. It takes the Unix idea that everything should have a
+    file-like interface and runs with that to its logical (and
+    surprisingly useful) extreme. It seems like a system that hangs
+    together really well and has the feeling that it was actually
+    designed, rather than grown. But that's enough about that. What I
+    wanted to mention was a script, bundle(1), that I found to be
+    really useful. So, use the source, Luke!, and then I'll say
+    something about it:
+
+        #!/bin/sh
+        echo '# To unbundle, run this file'
+        for i
+        do
+            echo "echo $i"
+            echo "sed 's/.//' >$i <<'//GO.SYSIN DD $i'"
+            sed "s/^/-/" $i
+            echo "//GO.SYSIN DD $i"
+        done
+
+    Cool huh? It's kinda meta but here's what it does: when you run it
+    like bundle file1 file2 > regen.sh it outputs a script that when
+    run will recreate file1 and file2. It does this with a few
+    applications of sed. Using file1 and file2 as examples, say I
+    have file1's contents:
+
+        hello
+
+    and file2 is:
+
+        world!
+
+    after running bundle with these two files the contents of regen.sh
+    will look like this:
+
+        # To unbundle, run this file
+        echo file1
+        sed 's/.//' > file1 <<'//GO.SYSIN DD file1'
+        -hello
+        //GO.SYSIN DD file1
+        echo file2
+        sed 's/.//' > file2 <<'//GO.SYSIN DD file2'
+        -world!
+        //GO.SYSIN DD file2
+
+    so, if you run this file, it prints "file1" and "file2" to the
+    terminal, but then writes "hello" and "world" to file1 and file2,
+    respectively (after having stripped the "-" off of each line using
+    sed).  So this is a neat little way to package up a bunch of
+    text-ish files into a single "self-expanding" package.
+
+
+- date: 2011-03-20
+  title: Learning to type on the Twiddler keyboard
+  postbody: >
+    I recently got a twiddler chorded keyboard (I love it).  My two
+    main goals with it are to be able to use it while doing things
+    like giving talks, because it is like having one of those
+    presentation clickers yet at the same time being able to
+    competently type with it. And the second goal is to use it on my
+    smartphone as a better alternative to the on-screen keyboard. I
+    just want to make a little aside on the second goal.  It's not
+    totally clear to me how to use an external USB keyboard with
+    Android (though I have some leads) but things look generally
+    promising.
+
+    Either use, of course, assumes that I can type on the crazy
+    thing.  I'm one of those people that find it fun to try and
+    re-wire my brain to do new things and I figure that if I switched
+    to dvorak (and have been using it for about 10 years) that I can
+    tackle this thing! I decided to do some drills with the Twiddler
+    so that I get to the point where I can use it for day-to-day
+    stuff, from then on it'll bootstrap itself through frequent
+    use.  That, by the way, was roughly my technique for learning
+    dvorak back in the day
+
+     1. Print out the layout and tape it up at eye-level, this breaks
+        you of the habit of looking at the keys (they won't help you
+        if you remap the keyboard in software)
+     2. Do simple drills of the home row (this is great on Dvorak
+        because you can form TONS of words)
+     3. Expand the drills to less frequently used letters and
+        characters
+     4. Now that you can type all words, even if you are slow, get on
+        IM or IRC in a low-traffic channel that you would like to
+        participate in, and just converse. This will provide both
+        motivation and practice without the feeling of banging your
+        head against the wall.
+     5. Do this daily or almost-daily for about 4-8 weeks (that's
+        about how long it took me to match and then exceed my QWERTY
+        speed)
+
+    To deal with steps 2 and 3 on the twiddler, I wrote this
+    short python script that pulls words out out /usr/share/dict/words
+    that can be typed without any chord (open), using the first chord
+    key (1st or "L"), and finally the second chord key (2nd or
+    "M").  I don't have the third chord key on here because using just
+    the first and second is sufficient for all letters.  Here's the
+    script:
+
+        import random
+
+        def all_from(target_list, input_list):
+            for c in input_list:
+                if not c in target_list:
+                    return False
+            return True
+        
+        def first_set(input_word):
+            return all_from("abcdefghABCDEFGH", input_word)
+        
+        def second_set(input_word):
+            return all_from("ijklmnopqIJKLMNOPQ", input_word)
+        
+        def third_set(input_word):
+            return all_from("rstuvwxyzRSTUVWXYZ", input_word)
+        
+        def fourth_set(input_word):
+            return all_from(".,;'\"?!-", input_word)
+        
+        def search_words(words, key_set=first_set):
+            out = []
+            for word in words:
+                if key_set(word) and len(word) > 1:
+                    out.append(word)
+            return out
+        
+        if __name__ == "__main__":
+            get_words = 10
+            fname = "/usr/share/dict/words"
+            wordlist = open(fname, "r").read().split("\n")
+        
+            first = search_words(wordlist, first_set)
+            second = search_words(wordlist, second_set)
+            third = search_words(wordlist, third_set)
+            #fourth = search_words(wordlist, fourth_set) # need wordlist w/ punct.
+        
+            print "open: ", " ".join(random.sample(first, get_words))
+            print "1st:  ", " ".join(random.sample(second, get_words))
+            print "2nd:  ", " ".join(random.sample(third, get_words))
+            #print "3rd:  ", " ".join(random.sample(fourth, get_words))
+
+- date: 2010-12-05
+  title: unfill-paragraph (only Emacs nerds need apply)
+  postbody: >
+    I usually keep plain text at a nice and tidy 72 columns (give or
+    take, but certainly under 80!).  But there are times when it is
+    necessary to have code that will be folded (word-wrapped) by the
+    end user.  Think of those text boxes on websites where the result
+    is going to be displayed on some website in a totally unformatted
+    way. In this case you want the text to be one long line per
+    paragraph with a blank line separating each. That way, the text is
+    as wide as the browser window or otherwise follows user
+    preferences (see
+    <http://www.mozilla.org/unix/customizing.html#usercss> for how to
+    do this in Firefox). Since I'm always hitting M-q in Emacs, my
+    code's always formatted at 72ish columns. The following bit of
+    Emacs Lisp lets you unfill-lines, that is it strips out newline
+    characters within a paragraph.
+
+        ;; Stefan Monnier <foo at acm.org>. It is the opposite of fill-paragraph
+        ;; Takes a multi-line paragraph and makes it into a single line of text.
+        
+        (defun unfill-paragraph ()
+            (interactive)
+            (let ((fill-column (point-max)))
+            (fill-paragraph nil)))
+        
+        (global-set-key (kbd "C-c M-q") 'unfill-paragraph)
+
+- date: 2010-11-16
+  title: Maine
+  postbody: >
+    <div class="gallery"><a href="img/DSC-6981-SMALL.jpg"><img 
+      alt="Maine Seashore"
+      src="img/DSC-6981-SMALL-1024x680.jpg"></a></div>
+
+- date: 2010-11-13
+  title: Remembrance of Blogs Past
+  postbody: >
+    <div class="img"><img src="img/hypnotoad_clockscope.jpg" 
+    alt="hypnotoad"></div>
+    Yikes, it always seems to come to this. I find myself with a blank
+    directory or database (it depends on the blog) that needs to be
+    filled up with stuff that I write. And as is the requirement, I go
+    and start filling it up with data.
+
+    I can pardon you for missing the blog that previously inhabited
+    this domain name. Its short run was punctuated by frequent DNS
+    issues, the blog equivalent of being deprived of oxygen. It was
+    also overly fussy in its implementation so there was really no
+    chance that Sarah would ever put words on the site (the same is
+    true for me).
+
+    I switched over to WordPress after seeing some pretty impressive
+    examples of what it does nowadays.
+
+    So as has become my custom, I'll link back to other sites that
+    I've also written.
+
+     * [chrisblog](chrisblog.zip) (Blogger, zip file)
+     * [Nerd Blog](http://twopoint718.posterous.com/) (Posterous)
+     * [sencjw_blog](sencjw_blog.zip) (zip file)

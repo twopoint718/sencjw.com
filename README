@@ -1,0 +1,11 @@
+# sencjw.com -- the personal website of Chris Wilson
+
+To build this site, you'll need:
+
+ - yst: https://github.com/jgm/yst
+ - haskell: http://haskell.org
+
+just issue the command 'yst' in the root of the directory (same place the
+README is in)
+
+the makefile is probably not relevant for anyone but me.

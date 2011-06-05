@@ -1,0 +1,25 @@
+- url      : index.html
+  title    : Home
+  template : index.st
+  requires : post.st
+  data     :
+    recentposts : FROM posts.yaml ORDER BY date DESC LIMIT 5
+
+- url      : contact.html
+  title    : Contact
+  template : contact.st
+
+- url      : blog.html
+  title    : Blog
+  template : blog.st
+  requires : post.st
+  data     :
+    posts : FROM posts.yaml ORDER BY date DESC
+
+- url      : colophon.html
+  title    : Colophon
+  template : colophon.st
+
+- url      : the-square-root-of-christmas.html
+  title    : The Square Root of Christmas
+  template : sqrtxmas.st
