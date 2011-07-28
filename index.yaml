@@ -23,3 +23,21 @@
 - url      : the-square-root-of-christmas.html
   title    : The Square Root of Christmas
   template : sqrtxmas.st
+
+- url      : resume.html
+  title    : Resume
+  template : resume.st
+  requires :
+    - employment.st
+    - employers.yaml
+    - skill.st
+    - skills.yaml
+    - degree.st
+    - degrees.yaml
+    - activities.yaml
+    - activity.st
+  data     :
+    employments : FROM employers.yaml ORDER BY date DESC
+    skills: FROM skills.yaml
+    degrees: FROM degrees.yaml ORDER BY date DESC
+    activities: FROM activities.yaml
