@@ -5,6 +5,8 @@
    <link rel="stylesheet" type="text/css" href="$root$css/screen.css" />
    <link rel="stylesheet" type="text/css" media="print" 
 	 href="$root$css/print.css" />
+   <link rel="alternate" type="application/rss+xml" title="RSS Feed"
+         href="blog.rss" />
    <script src="$root$js/jquery.min.js" 
 	   type="text/javascript"></script>
    <script src="$root$js/nav.js" type="text/javascript"></script>
