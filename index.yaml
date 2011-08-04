@@ -41,3 +41,10 @@
     skills: FROM skills.yaml
     degrees: FROM degrees.yaml ORDER BY date DESC
     activities: FROM activities.yaml
+
+- Blog Posts:
+  - url      : 2011-07-03.html
+    title    : Social Networking
+    template : indv_post.st
+    data     :
+      posts : FROM posts.yaml WHERE date = '2011-07-03'
