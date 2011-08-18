@@ -13,4 +13,3 @@ change][0].
 $recentposts:post()$
 
 For a complete list of posts, see the [blog](blog.html) page.
-
