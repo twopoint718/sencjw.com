@@ -1,5 +1,5 @@
 import yaml
-import uuid
+import hashlib
 import time
 import sys
 
@@ -35,9 +35,11 @@ def build_items(outfile):
         posts = yaml.load(f.read())
         for post in posts:
             date = post['date']
-            post['guid'] = str(uuid.uuid1())
             post['ymd_date'] = date.strftime(ymd_fmt)
             post['date_fmt'] = date.strftime(date_fmt)
+            h = hashlib.sha1()
+            h.update(post['ymd_date'] + post['title'])
+            post['guid'] = h.hexdigest()
             out = item_template % post
             outfile.write(out.encode("utf-8"))
 
