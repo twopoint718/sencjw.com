@@ -1,16 +1,11 @@
 # Contact Info
 
- * @twopoint718 ([identi.ca][0], [twitter][1])
+ * [@twopoint718](http://twitter.com/twopoint718)
  * twopoint718 (IRC <http://freenode.net>)
- * MadLUG Steering Committee ([Madison Linux User Group][2], [Meetup.com page][3])
- * mail
-   ([christopher.j.wilson@gmail.com](mailto:christopher.j.wilson@gmail.com),
-   [chris@sencjw.com](chris@sencjw.com))
-
-[0]: http://identi.ca/twopoint718
-[1]: http://twitter.com/twopoint718
-[2]: http://madisonlinux.org
-[3]: http://meetup.com/madlug
+ * MadLUG President ([Madison Linux User Group](http://madisonlinux.org),
+   [Meetup.com page](http://meetup.com/madlug))
+ * mail (<christopher.j.wilson@gmail.com>, <chris@bendyworks.com>,
+   <chris@sencjw.com>)
 
 # About Me
 
@@ -37,9 +32,9 @@ Imagination](http://www.amazon.com/Computers-imagination-Visual-adventures-beyon
 
 I continue to use Linux, with only brief breaks here and there for
 forays into other OSs (OS X, Plan 9, and the very occasional Windows).
-I'm active in the Madison Linux community as a steering committee
-member for MadLUG and am interested in getting new users to try out
-Linux (email me with questions/comments).
+I'm active in the Madison Linux community as MadLUG's current
+president and am interested in getting new users to try out Linux
+(email me with questions/comments).
 
 # How I Work
 
@@ -61,21 +56,19 @@ Source-type text is versioned with [git](http://git-scm.com/).
 
 I use a
 [dvorak](http://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard) key
-layout and usually type on a [Happy
-Hacking](http://pfuca-store.stores.yahoo.net/haphackeylit1.html) USB
-keyboard.  I've been experimenting with a
-[Twiddler](http://www.handykey.com/) chorded keyboard/mouse for mobile
-computing and am looking for a nice way to interface this device with
-a Nexus S Android phone; probably using audio feedback for
-interaction.
+layout and usually type on a [Dvorak-labeled TypeMatrix
+2030](http://typematrix.com/2030/features.php) USB keyboard.  I've
+been experimenting with a [Twiddler](http://www.handykey.com/) chorded
+keyboard/mouse for mobile computing and am looking for a nice way to
+interface this device with a Nexus S Android phone; probably using
+audio feedback for interaction.
 
 For monitors, I strongly prefer things in a 4:3 or 5:4 ratio, this is
 doubly true for laptops (although, I broke with this and got a [Lemur
 Ultrathin](http://knowledge76.com/index.php/LemU1) laptop from
 System76) where getting a decent vertical resolution while keeping the
-laptop in the 12-14" range is tough.  Laptops which fit this
-definition are quite rare currently.  Now that ipads are widely
-produced using a 4:3 screen, perhaps this trend will reverse.
+laptop in the 12-14 in. range is tough.  At work, I use a 13 inch
+MacBook Air.
 
 ## Quixotic Notions
 
