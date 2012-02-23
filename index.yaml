@@ -41,3 +41,7 @@
     skills: FROM skills.yaml
     degrees: FROM degrees.yaml ORDER BY date DESC
     activities: FROM activities.yaml
+
+- url      : pubkey.html
+  title    : PGP Public Key (6D7735C5)
+  template : pubkey.st
