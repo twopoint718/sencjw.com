@@ -24,24 +24,6 @@
   title    : The Square Root of Christmas
   template : sqrtxmas.st
 
-- url      : resume.html
-  title    : Resume
-  template : resume.st
-  requires :
-    - employment.st
-    - employers.yaml
-    - skill.st
-    - skills.yaml
-    - degree.st
-    - degrees.yaml
-    - activities.yaml
-    - activity.st
-  data     :
-    employments : FROM employers.yaml ORDER BY date DESC
-    skills: FROM skills.yaml
-    degrees: FROM degrees.yaml ORDER BY date DESC
-    activities: FROM activities.yaml
-
 - url      : pubkey.html
   title    : PGP Public Key (6D7735C5)
   template : pubkey.st
