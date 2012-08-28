@@ -27,3 +27,7 @@
 - url      : pubkey.html
   title    : PGP Public Key (6D7735C5)
   template : pubkey.st
+
+- url      : transparent_web.html
+  title    : The Transparent Web (Book)
+  template : book.st
