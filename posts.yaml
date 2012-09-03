@@ -85,7 +85,7 @@
 
         (a -> b -> c)
 
-    on the right-hand side; it won't work. how to we convert a `(a -> b ->
+    on the right-hand side; it won't work. how do we convert a `(a -> b ->
     c)` to a `(a -> (b -> c))`? This way:
 
         {-
@@ -150,9 +150,9 @@
         f2 = (foldl1 (*) .) . replicate
 
     In general, and I don't know a term for this, but the operation of
-    successive function composition lets compose higher and higher arity
-    functions together. Here's a dumb example using my little point-free
-    `succ` function:
+    successive function composition lets us compose higher and higher arity
+    functions together. Here's a dumb example using my little point-free `succ`
+    function:
 
         g :: Int -> Int
         g = (+1)
