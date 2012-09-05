@@ -2,10 +2,7 @@ all:
 	yst
 
 github: all site/blog.rss
-	cd site
-	git commit -am "publish"
-	git push
-	cd ..
+	cd site && git commit -am "publish" && git push
 
 publish: all site/blog.rss
 	rsync -avz site/* chris@wolffia:/var/www/
