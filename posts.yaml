@@ -6,9 +6,8 @@
     Lambda](http://stevelosh.com/blog/2013/03/list-out-of-lambda/)
     that reminded me, in a really good way, of a section in SICP.
     If you want to read the boiled-down scheme version that's
-    in SICP, here it is (my paraphrasing from section 2.1.3
-    <http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-14.html#%_sec_
-    2.1.3> )
+    in SICP, here it is (my paraphrasing from
+    [SICP section 2.1.3](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-14.html#%_sec_2.1.3))
 
     "cons" makes a list by putting an element onto the front of an
     existing list.

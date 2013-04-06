@@ -11,8 +11,8 @@ ymd_fmt= "%Y-%m-%d"
 item_template = """<item>
   <title><![CDATA[%(title)s]]></title>
   <description><![CDATA[%(postbody)s]]></description>
-  <link>blog.html#%(ymd_date)s</link>
-  <guid>%(guid)s</guid>
+  <link>https://sencjw.com/blog.html#%(ymd_date)s</link>
+  <guid isPermalink="false">%(guid)s</guid>
   <pubDate>%(date_fmt)s</pubDate>
 </item>
 """
