@@ -56,8 +56,8 @@
     Remember that the way that this works is that the list is being
     stored as a function so the only thing we can do is to call it!
 
-    (car (cons 1 '(2 3))) ; 1
-    (cdr (cons 1 '(2 3))) ; '(2 3)
+        (car (cons 1 '(2 3))) ; 1
+        (cdr (cons 1 '(2 3))) ; '(2 3)
 
     Cool! We just built lists out of "nothing". If you want to be even
     more mind-bending. You can make the "dispatch" function anonymous:
