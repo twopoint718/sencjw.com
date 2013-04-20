@@ -12,7 +12,7 @@ item_template = """<item>
   <title><![CDATA[%(title)s]]></title>
   <description><![CDATA[%(postbody)s]]></description>
   <link>https://sencjw.com/blog.html#%(ymd_date)s</link>
-  <guid isPermalink="false">%(guid)s</guid>
+  <guid isPermaLink="false">%(guid)s</guid>
   <pubDate>%(date_fmt)s</pubDate>
 </item>
 """
