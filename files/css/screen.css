@@ -32,7 +32,7 @@ a:active,  a:focus { text-decoration: underline; color: #000; }
 /* code, pre { background: #36454F; color: #B2BEB5; } /* very
    optional, but still useful.  W3C uses about the same colors for
    codes */
-pre { background: #36454F; color: #B2BEB5; padding: 5px; border: 1px solid gray; }
+pre { padding: 5px; border: 1px solid gray; }
 
 h1 > a:link, h1 > a:active, h1 > a:hover, h1 > a:focus, h1 > a:visited,
 h2 > a:link, h2 > a:active, h2 > a:hover, h2 > a:focus, h2 > a:visited,
