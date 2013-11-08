@@ -47,7 +47,7 @@ def build_items(outfile):
 
 def run_markdown(txt):
     p = Popen("pandoc", shell=True, bufsize=512, stdin=PIPE, stdout=PIPE, close_fds=True)
-    p.stdin.write(unicode(txt))
+    print p.stdin, unicode(txt)
     p.stdin.close()
     output_html = p.stdout.read()
     p.stdout.close()
