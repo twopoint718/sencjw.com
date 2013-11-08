@@ -1,3 +1,14 @@
+- date: 2013-11-08
+  title: ChiHack
+  postbody: |
+
+    As I continue my leisurely foray into the world of Haskell, I have
+    come upon a bivouac of Haskellers near Chicago this weekend. Myself
+    and a co worker from the office will be attending the first-ever
+    [ChiHack](https://plus.google.com/events/cc4njkf8kh5aho6soboisv6c7rc).
+    Maybe I can get someone to explain
+    [Backpack](http://www.mpi-sws.org/~skilpat/backpack/) to me.
+
 - date: 2013-10-03
   title: reactive_record
   postbody: |
