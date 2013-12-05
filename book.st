@@ -10,8 +10,11 @@ code that we're all used to writing.
 
 ### The Frameworks
 
+- [Rails](http://rubyonrails.org) (for comparison)
+- [Meteor](http://www.meteor.com)
 - [Opa](http://opalang.org)
 - [Ur/Web](http://www.impredicative.com/ur/)
+- [Elm](http://elm-lang.org) (front-end only)
 
 ### Presentations
 
@@ -22,16 +25,4 @@ code that we're all used to writing.
 
 ### The Book
 
-Here is a speculative table of contents.  I will either make the following
-links *work* as the chapters are written, or they'll be changed to reflect
-what's really going in the book.  I would *love* to hear feedback on any of
-these entries!
-
-#### Table of Contents
-
-- Introduction
-- The "Chasm"
-- Client-side/Server-side
-- The "Control" - A tutorial webapp in modern MVC style
-- Opa
-- Ur/Web
+The book is a work-in-progress over on LeanPub: [The Transparent Web](https://leanpub.com/transparentweb)
